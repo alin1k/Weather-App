@@ -26,8 +26,19 @@
     </div>
 
     <footer class="container-fluid text-center p-3 bg-white">
-      <a href="https://github.com/alin1k/Weather-App" class="link-dark" target="_blank" style="text-decoration: none;"><i class="fab fa-github"></i> Visit the Github repo</a>
+      <a href="https://github.com/alin1k/react-weather-app" class="link-dark" target="_blank" style="text-decoration: none;"><i class="fab fa-github"></i> Visit the Github repo</a>
       <p class="mb-0">© Olteanu Alin - 2022</p>
-  </footer>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script>
+        $(".btn[data-bs-toggle='collapse']").click(function() {
+            if ($(this).text() === 'See details') {
+                $(this).text('Hide details');
+            } else {
+                $(this).text('See details');
+            }
+        });
+    </script>
 </body>
 </html>
