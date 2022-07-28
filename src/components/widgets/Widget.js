@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import getCity from "../../api/index.js";
 
 function Widget(props){
     const {index, city, setCities} = props;
+    const [buttonText, setButtonText] = useState("See details");
 
     function removeCity(){
         setCities(prevValue => {
@@ -35,7 +36,15 @@ function Widget(props){
                                 <p className="card-text">Wind: {city.wind.speed} km/h - {city.wind.deg}°</p>
                             </div>
                         </div>
-                        <button type="button" className="collapsible btn btn-dark mt-3" data-bs-toggle="collapse" data-bs-target={"#collapseExample" + index} aria-expanded="false" aria-controls={"collapseExample" + index}>See details</button>
+                        <button type="button" className="collapsible btn btn-dark mt-3" data-bs-toggle="collapse" data-bs-target={"#collapseExample" + index} aria-expanded="false" aria-controls={"collapseExample" + index}
+                        onClick={()=>{
+                            if(buttonText === "See details"){
+                                setButtonText("Hide details");
+                            }else{
+                                setButtonText("See details");
+                            }
+                        }}
+                        >{buttonText}</button>
                     </div>
                 </div>
             </div>
